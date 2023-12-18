@@ -1,0 +1,33 @@
+
+CS -> LLVM (Low Level Virtual Machine)
+
+Étape 1: Installation de clang-format et clang-tidy
+
+    Installation de clang-format:
+ex pour apt-get:
+sudo apt-get install clang-format
+
+Vous pouvez ajuster la commande d'installation en fonction de votre gestionnaire de paquets (apt-get, brew, etc.) si vous n'utilisez pas un système basé sur Debian.
+
+Installation de clang-tidy:
+ex pour apt-get:
+    sudo apt-get install clang-tidy
+
+Étape 2: Configuration de clang-format
+
+Créez un fichier de configuration ".clang-format", comende pour en créer un:
+clang-format -style=llvm -dump-config > .clang-format
+
+Étape 3: Utilisation de clang-format
+
+clang-format -i *.cpp
+
+Étape 4: Configuration de clang-tidy
+
+Créez un fichier de configuration .clang-tidy ->
+Checks: '*'
+HeaderFilterRegex: '.*'
+
+Étape 5: Utilisation de clang-tidy
+
+clang-tidy your_source_file.cpp
