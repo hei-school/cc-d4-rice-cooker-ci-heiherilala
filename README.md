@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Java Development Kit (JDK) 8 or higher installed
+- Java Development Kit (JDK) 17 or higher installed
 - Apache Maven (for building and managing dependencies)
 
 ## Description
@@ -12,22 +12,37 @@ This project implements a command-line interface (CLI) application simulating a 
 ## Installation
 
 1. Clone the repository to your local machine:
-    ```bash
-    git clone https://github.com/your-username/rice-cooker.git
-    cd rice-cooker
-    ```
 
-2. Build the project using Maven:
-    ```bash
-    mvn clean install
-    ```
+2. Build the project using Gradel:
+    - Install Gradel
+        - On Unix-like systems
+
+                /gradlew
+
+        - On Windows
+
+                gradlew.bat
+    - Build the project using Gradle
+        - On Unix-like systems
+
+                /gradlew build
+
+        - On Windows
+
+                gradlew.bat build
+
+    - Reload all packages
+        - On Unix-like systems
+
+                /gradlew --refresh-dependencies
+
+        - On Windows
+
+                gradlew.bat --refresh-dependencies
 
 ## Execution
 
-Run the application using the following command:
-  ```bash
-  java -jar target/rice-cooker-1.0-SNAPSHOT.jar
-  ```
+Run directly "RiceCookerApp" by your IDE
 
 ## Coding Standard
 
@@ -37,5 +52,27 @@ This project adheres to the Google Java Style Guide for code formatting, naming 
 
 It is recommended to use Checkstyle for linting. A Checkstyle configuration file (checkstyle.xml) is provided in the project root. You can run Checkstyle using the following Maven command:
 
-    mvn checkstyle:check
+    ./gradlew checkstyleMain checkstyleTest
 
+
+## format
+
+You just need to run script : 
+
+        ./format.sh
+
+## Test
+
+Run directlt test in Gradle
+
+        ./gradlew test
+
+
+## CI
+
+here's an example of a successful CI we have with CircleCI
+
+<img
+  src="/image/java.png"
+  alt="CircleCI succes example"
+  title="CircleCI succes example">
