@@ -1,56 +1,60 @@
 // models/IngredientOperation.js
-const readlineSync = require('readline-sync');
+const readlineSync = require('readline-sync')
 
 class IngredientOperation {
   constructor() {
-    this.ingredients = [];
+    this.ingredients = []
   }
 
   addIngredients(operationName) {
-    console.log(`[${operationName}] Start adding ingredients:`);
+    console.log(`[${operationName}] Start adding ingredients:`)
     while (true) {
-      const name = readlineSync.question('>->-> Ingredient (e.g., water): ');
+      const name = readlineSync.question('>->-> Ingredient (e.g., water): ')
 
       if (!name) {
-        console.log('Invalid ingredient name. Please try again.');
-        continue;
+        console.log('Invalid ingredient name. Please try again.')
+        continue
       }
 
-      const quantity = readlineSync.question('>->-> Quantity in grams: ');
-      const numericQuantity = parseFloat(quantity);
+      const quantity = readlineSync.question('>->-> Quantity in grams: ')
+      const numericQuantity = parseFloat(quantity)
 
       if (isNaN(numericQuantity) || numericQuantity < 0) {
-        console.log('Invalid quantity. Please enter a non-negative number.');
-        continue;
+        console.log('Invalid quantity. Please enter a non-negative number.')
+        continue
       }
 
-      this.ingredients.push({ name, quantity: numericQuantity });
+      this.ingredients.push({ name, quantity: numericQuantity })
 
-      console.log('Ingredient added successfully.');
+      console.log('Ingredient added successfully.')
 
       const choice = readlineSync.keyInSelect(
-        ['Add another ingredient', 'Close the rice cooker and start cooking', 'Cancel'],
-        '>->-> Choose an action: '
-      );
+        [
+          'Add another ingredient',
+          'Close the rice cooker and start cooking',
+          'Cancel',
+        ],
+        '>->-> Choose an action: ',
+      )
 
       if (choice === 0) {
-        continue;
+        continue
       } else if (choice === 1) {
-        break;
+        break
       } else {
-        this.cancel();
-        break;
+        this.cancel()
+        break
       }
     }
   }
 
   getIngredients() {
-    return this.ingredients;
+    return this.ingredients
   }
 
   cancel() {
-    this.ingredients = [];
+    this.ingredients = []
   }
 }
 
-module.exports = IngredientOperation;
+module.exports = IngredientOperation
