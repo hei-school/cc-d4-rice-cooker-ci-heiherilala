@@ -1,0 +1,33 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: cimg/openjdk:21.0.0
+
+    working_directory: ~/circle-ci
+
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-
+
+      - run: gradle dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      # run tests!
+      - run: gradle test
+
+      - run:
+          name: Checkstyle
+          command: ./gradlew checkstyleMain checkstyleTest
