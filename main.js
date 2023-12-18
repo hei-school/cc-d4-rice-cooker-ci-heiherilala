@@ -4,6 +4,7 @@ const RiceCooker = require('./models/RiceCooker')
 function main() {
   let riceCooker = new RiceCooker()
 
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     console.log('Choose your action:')
     console.log('1>->-> Cook Rice')

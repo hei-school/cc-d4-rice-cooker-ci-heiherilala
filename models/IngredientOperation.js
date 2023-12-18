@@ -8,6 +8,7 @@ class IngredientOperation {
 
   addIngredients(operationName) {
     console.log(`[${operationName}] Start adding ingredients:`)
+    // eslint-disable-next-line no-constant-condition
     while (true) {
       const name = readlineSync.question('>->-> Ingredient (e.g., water): ')
 

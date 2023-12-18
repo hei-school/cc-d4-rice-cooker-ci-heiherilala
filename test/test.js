@@ -1,9 +1,11 @@
+/* eslint-disable no-undef */
 const { expect } = require('chai')
 const sinon = require('sinon')
 const readlineSync = require('readline-sync')
 const RiceCooker = require('../models/RiceCooker')
 const IngredientOperation = require('../models/IngredientOperation')
 
+// eslint-disable-next-line no-undef
 describe('RiceCooker', () => {
   it('should create a new instance of RiceCooker', () => {
     const riceCooker = new RiceCooker()
@@ -11,7 +13,6 @@ describe('RiceCooker', () => {
   })
 
   it('should add ingredients for cooking rice', () => {
-    const riceCooker = new RiceCooker()
     const ingredientOperation = new IngredientOperation()
 
     sinon.stub(readlineSync, 'question').returns('Test Ingredient')

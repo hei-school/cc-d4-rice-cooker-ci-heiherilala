@@ -1,5 +1,4 @@
 // models/RiceCooker.js
-const readlineSync = require('readline-sync')
 const IngredientOperation = require('./IngredientOperation')
 
 class RiceCooker {
