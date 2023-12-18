@@ -32,3 +32,5 @@
 /.vscode/
 .DS_Store
 Thumbs.db
+
+.git*
