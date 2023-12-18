@@ -1,1 +1,40 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/__xb4cFP)
+
+## Feature
+ Main Menu 🍔
+
+rust
+
+Choose action:
+1>->-> Rice
+2>->-> Hot water
+4>->-> Soup
+
+Choose a recipe, and temperature/duration are auto-set. Options:
+
+    Add Ingredients
+    Cancel: Back to the main menu.
+
+Adding Ingredients Operation 🥤
+
+    Add Ingredient: Input name (string) and quantity (number).
+    After each addition:
+        1>->-> Add another
+        2>->-> Close and start prep
+        3>->-> Cancel
+
+Choose more or proceed. Results display when closing:
+
+    Dish ready, ingredients, temperature, and duration.
+    Back to the main menu, canceling all operations.
+
+## Project Overview 🍟🍔🥤
+
+Pedagogical project to master CircleCI for Continuous Integration.
+
+## Project Versions 🍟🍔🥤
+
+    Java: feature/java
+    Python: feature/python
+    C++: feature/cpp
+    JavaScript: feature/js
+
